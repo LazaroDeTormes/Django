@@ -1,0 +1,21 @@
+{% extends 'sitio/base.html' %}
+{% block content %}
+
+{% for noticia in noticias %}
+
+<hr/>
+
+<div class="information">
+
+    <img src={{ noticia.imagen }}/>
+    <p>{{ noticia.nombre }}</p>
+    <p>{{ noticia.titular }}</p>
+    <p>{{ noticia.previsualizacion }} </p>
+    <!--<p>Cuerpo: {{ cliente.mobile }}</p>-->
+    <p>{{ noticia.fecha }}</p>
+
+</div>
+
+{% endfor %}
+
+{% endblock %}

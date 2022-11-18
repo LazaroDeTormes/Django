@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rapture</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="styledheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/sitio.css' %}"/>
+    <link href="https://www.dafont.com/andes.font" rel="stylesheet"/>
+</head>
+<body>
+<div class="page-header">
+    <h2>Rapture</h2>
+    <div class="enlaces">
+        <a href="{% url 'information' %}" class="top-menu"><span class="glyphicon-minus">Inicio</span></a>
+        <a href="{% url 'torneos' %}" class="top-menu"><span class="glyphicon-minus">Torneos</span></a>
+        <a href="#" class="top-menu"><span class="glyphicon-minus">Tienda</span></a>
+        <a href="{% url 'cliente_new' %}" class="top-menu"><span class="glyphicon-plus">Regístrate</span></a>
+    </div>
+</div>
+<hr/>
+<div class="information">
+    {% block content %}
+    {% endblock %}
+</div>
+<hr/>
+</body>
+</html>

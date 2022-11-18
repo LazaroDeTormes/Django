@@ -1,0 +1,15 @@
+{% extends 'sitio/base.html' %}
+{% block content %}
+<h3> NUEVO CLIENTE </h3>
+  <hr/>
+<div class="content">
+  <form method="POST"> {% csrf_token %}
+      {{ form.as_p }}
+    <button type="submit" class="save btn btn-default">Guardar</button>
+
+
+  </form>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+
+
+.page-header h2{
+    background-image: url("../media/Rapture.jpg");
+
+
+    font-family: 'Andes';
+    font-size: 100px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.enlaces{background: #002838;}
+
+.enlaces a{
+
+
+    font-family: 'Arial';
+    font-size: 30px;
+    color: #ffffff;
+    text-align: center;
+}
+
+
+.content{
+    padding-top: 20px;
+    padding-left: 20px;
+    font-size: 12px;
+    font-family: 'Calibre';
+
+}
+.information{
+    padding-top: 20px;
+    padding-left: 20px;
+    font-size: 12px;
+    font-family: 'Calibre';
+
+}
+
+.dni{
+    color: #882818;
+}
+
+@font-face {
+  font-family: Andes;
+  src: url(Andes.ttf);
+}

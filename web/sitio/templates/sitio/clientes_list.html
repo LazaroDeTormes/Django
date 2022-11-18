@@ -1,0 +1,19 @@
+{% extends 'sitio/base.html' %}
+{% block content %}
+{% for cliente in clientes %}
+
+<hr/>
+
+<div class="content">
+
+    <p><div class="dni">DNI: {{ cliente.dni }}</div></p>
+    <p>Nombre: {{ cliente.nombre }}</p>
+    <p>Fecha de alta: {{ cliente.fecha_alta }}</p>
+    <p>Dirección: {{ cliente.direccion }} </p>
+    <p>Teléfono: {{ cliente.mobile }}</p>
+
+</div>
+
+{% endfor %}
+
+{% endblock %}
