@@ -1,13 +1,15 @@
 {% extends 'sitio/base.html' %}
 {% block content %}
-{% for cliente in clientes %}
+{% for torneo in torneos %}
   <hr/>
 <div class="tour">
-  <p>{{Torneo.titulo}}</p>
-  <p>{{Torneo.descripcion}}</p>
-  <p>{{Torneo.requisitos}}</p>
-  <p>{{Torneo.fecha_tor_emp}}</p>
-  <p>{{Torneo.fecha_tor_fin}}</p>
+  <p>{{ torneo.titulo }}</p>
+  <p>{{ torneo.descripcion }}</p>
+  <p>{{ torneo.requisitos }}</p>
+  <p>{{ torneo.fecha_tor_emp }}</p>
+  <p>{{ torneo.fecha_tor_fin }}</p>
 </div>
 {% endfor %}
 {% endblock %}
+
+

@@ -12,7 +12,7 @@ class Cliente(models.Model):
 
 
 class Noticia(models.Model):
-    imagen = models.ImageField(upload_to="sitio/static/media")
+    imagen = models.ImageField(upload_to="static/media")
     titular = models.CharField(max_length=15, primary_key= True)
     previsualizacion = models.CharField(max_length=150, blank= False, null = False)
     cuerpo = models.CharField(max_length=500, blank= False, null = False)
