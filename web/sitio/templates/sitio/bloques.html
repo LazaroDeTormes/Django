@@ -1,0 +1,13 @@
+{% extends 'sitio/base.html' %}
+{% block content %}
+{% for cliente in clientes %}
+  <hr/>
+<div class="tour">
+  <p>{{ torneo.titulo }}</p>
+  <p>{{ torneo.descripcion }}</p>
+  <p>{{ torneo.requisitos }}</p>
+  <p>{{ torneo.fecha_tor_emp }}</p>
+  <p>{{ torneo.fecha_tor_fin }}</p>
+</div>
+{% endfor %}
+{% endblock %}

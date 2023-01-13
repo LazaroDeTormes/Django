@@ -1,24 +1,40 @@
 
 
-.page-header h2{
+.page-header{
     background-image: url("../media/Rapture.jpg");
+    margin: 0px;
+}
+
+p {
+    margin: 0
+}
 
 
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 0px;
+    margin-bottom: 0;
+}
+
+.page-header h2{
     font-family: 'Andes';
     font-size: 100px;
     color: #ffffff;
     text-align: center;
+    padding: 15px;
 }
 
-.enlaces{background: #002838;}
+.enlaces{
+    text-align: center;
+}
+
+
 
 .enlaces a{
-
-
-    font-family: 'Arial';
+    font-family: 'Andes';
     font-size: 30px;
     color: #ffffff;
     text-align: center;
+    padding: 50px;
 }
 
 
@@ -29,13 +45,39 @@
     font-family: 'Calibre';
 
 }
-.information{
+#noticias {
+    background-image: url("../media/marco.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    background-clip: border-box;
     padding-top: 20px;
     padding-left: 20px;
     font-size: 12px;
     font-family: 'Calibre';
+    padding-top: 25%;
+    margin-bottom: 0;
+}
+
+
+.information{
+    margin-bottom: 10%;
+}
+
+.information img{
+    margin-left: 15%;
+    width: 30%;
+    height: 20%;
+}
+
+#cuerpo{
+    color: white;
+    position: absolute;
+    left:47%;
+
 
 }
+
 
 .dni{
     color: #882818;

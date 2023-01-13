@@ -3,17 +3,19 @@
 
 {% for noticia in noticias %}
 
-<hr/>
+
 
 <div class="information">
 
-    <img title='portada' src="{{ noticia.imagen }}" heigh="300" width="500" alt="portada"/>
-    <p>{{ noticia.nombre }}</p>
-    <p>{{ noticia.titular }}</p>
-    <p>{{ noticia.previsualizacion }} </p>
-    <!--<p>Cuerpo: {{ cliente.mobile }}</p>-->
-    <p>{{ noticia.fecha }}</p>
+    <img title='portada' src="{{ noticia.imagen }}" alt="portada"/>
 
+    <div id="cuerpo">
+        <h3>{{ noticia.nombre }}</h3>
+        <h3>{{ noticia.titular }}</h3>
+        <p>{{ noticia.previsualizacion }} </p>
+        <!--<p>Cuerpo: {{ cliente.mobile }}</p>-->
+        <p>{{ noticia.fecha }}</p>
+    </div>
 </div>
 
 {% endfor %}
