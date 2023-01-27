@@ -16,3 +16,8 @@ class TorneoForm(forms.ModelForm):
     class Meta:
         model = Torneo
         fields = ['titulo','descripcion','requisitos','fecha_tor_emp','fecha_tor_fin']
+
+class TiendaForm(forms.ModelForm):
+    class Meta:
+        model = Articulo
+        fields = ['nombre','descripcion','precio']

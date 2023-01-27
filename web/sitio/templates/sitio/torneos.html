@@ -1,13 +1,20 @@
 {% extends 'sitio/base.html' %}
 {% block content %}
 {% for torneo in torneos %}
-  <hr/>
+
 <div class="tour">
-  <p>{{ torneo.titulo }}</p>
+  <h2>{{ torneo.titulo }}</h2>
+  <hr/>
+  <p>Descripción:</p>
   <p>{{ torneo.descripcion }}</p>
+  <p>- - - - - - - - - - - - - - - - - - - - - - - - - - </p>
+  <p>Requisitos:</p>
   <p>{{ torneo.requisitos }}</p>
+  <p>- - - - - - - - - - - - - - - - - - - - - - - - - - </p>
+  <p>Inicio y fin</p>
   <p>{{ torneo.fecha_tor_emp }}</p>
   <p>{{ torneo.fecha_tor_fin }}</p>
+  <button type="submit" class="save btn btn-default">¡Inscríbete!</button>
 </div>
 {% endfor %}
 {% endblock %}

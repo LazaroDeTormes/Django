@@ -24,3 +24,8 @@ class Torneo(models.Model):
     requisitos = models.CharField(max_length=100, blank= False, null = False)
     fecha_tor_emp = models.DateTimeField("Fecha de inicio", blank= False, null = False, default=datetime.datetime.now())
     fecha_tor_fin = models.DateTimeField("Fecha de finiquito", blank=False, null=False, default=datetime.datetime.now())
+
+class Articulo(models.Model):
+    nombre = models.CharField(max_length=20, primary_key=True)
+    descripcion = models.CharField(max_length=200, blank=False, null=False)
+    precio = models.CharField(max_length=100, blank=False, null=False)
