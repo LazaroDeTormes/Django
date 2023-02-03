@@ -26,6 +26,8 @@ class Torneo(models.Model):
     fecha_tor_fin = models.DateTimeField("Fecha de finiquito", blank=False, null=False, default=datetime.datetime.now())
 
 class Articulo(models.Model):
+    img = models.ImageField(upload_to="static/media")
     nombre = models.CharField(max_length=20, primary_key=True)
     descripcion = models.CharField(max_length=200, blank=False, null=False)
     precio = models.CharField(max_length=100, blank=False, null=False)
+    fecha_venta = models.DateTimeField("Fecha de venta", blank=False, null=False, default=datetime.datetime.now())

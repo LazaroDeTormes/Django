@@ -20,4 +20,4 @@ class TorneoForm(forms.ModelForm):
 class TiendaForm(forms.ModelForm):
     class Meta:
         model = Articulo
-        fields = ['nombre','descripcion','precio']
+        fields = ['img','nombre','descripcion','precio', 'fecha_venta']

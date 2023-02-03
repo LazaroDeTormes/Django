@@ -1,11 +1,23 @@
 {% extends 'sitio/base.html' %}
 {% block content %}
-<!--{% for articulo in tienda %}-->
+<div id="ar">
+{% for articulo in tienda %}
 
-<div class="articulo">
+    <div id="arti" class="articulo">
 
-</div>
+        <img title='obj' src="{{ articulo.img }}" alt="objeto"/>
+
+        <div id="desc">
+            <h3>{{ articulo.nombre }}</h3>
+            </br>
+            <h3>{{ articulo.descripcion }}</h3>
+            <br/>
+            <p>{{ articulo.precio }} </p>
+        </div>
+    </div>
+
 {% endfor %}
+</div>
 {% endblock %}
 
 

@@ -28,5 +28,5 @@ def torneos(request):
     return render(request, 'sitio/torneos.html',{'torneos':torneos})
 
 def tienda(request):
-    tienda = Articulo.objects.filter(fecha_tor_emp__lte=timezone.now()).order_by('fecha_tor_emp')
+    tienda = Articulo.objects.filter(fecha_venta__lte=timezone.now()).order_by('fecha_venta')
     return render(request, 'sitio/tienda.html',{'tienda':tienda})
