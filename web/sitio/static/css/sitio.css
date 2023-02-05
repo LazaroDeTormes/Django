@@ -60,8 +60,8 @@ h1, .h1, h2, .h2, h3, .h3 {
     background-clip: border-box;
     font-size: 12px;
     font-family: 'Calibre', serif;
-    padding-top: 25%;
-    padding-bottom: 20%;
+    padding-top: 28%;
+    padding-bottom: 25%;
     padding-left: 20%;
     padding-right: 20%;
 }
@@ -211,6 +211,7 @@ hr{
 
 #arti {
 
+    margin-bottom: 5%;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -227,8 +228,9 @@ hr{
 }
 
 #arti img {
-    height: 50%;
-    width: 50%;
+    height: 250px;
+    width: 250px;
+    align-content: center;
 }
 
 #ar {
@@ -258,9 +260,13 @@ hr{
     font-family: 'Calibre';
     top:50%;
     font-size: 140%;
+    margin-right: 5%;
 
 
+}
 
+#row {
+    margin-right: 5%;
 }
 
 

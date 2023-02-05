@@ -2,22 +2,23 @@
 {% block content %}
 <div id="ar">
 {% for articulo in tienda %}
-
-    <div id="arti" class="articulo">
-
-        <img title='obj' src="{{ articulo.img }}" alt="objeto"/>
-
-        <div id="desc">
-            <h3>{{ articulo.nombre }}</h3>
-            </br>
-            <h3>{{ articulo.descripcion }}</h3>
-            <br/>
-            <p>{{ articulo.precio }} </p>
+    {% if forloop.counter0|divisibleby:4 %}
+        <div class="row">
+    {% endif %}
+        <div id="arti" class="articulo col-3">
+            <img title='obj' src="{{ articulo.img }}" alt="objeto"/>
+            <div id="desc">
+                <h3>{{ articulo.nombre }}</h3>
+                <br/>
+                <h3>{{ articulo.descripcion }}</h3>
+                <br/>
+                <p>{{ articulo.precio }}<button type="submit" class="save btn btn-default">Añadir al carro</button></p>
+                <br/>
+            </div>
         </div>
-    </div>
-
+    {% if forloop.counter|divisibleby:4 or forloop.last %}
+        </div>
+    {% endif %}
 {% endfor %}
 </div>
 {% endblock %}
-
-
