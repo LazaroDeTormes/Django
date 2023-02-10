@@ -37,7 +37,12 @@ h1, .h1, h2, .h2, h3, .h3 {
 }
 
 .enlaces{
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: normal;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -47,7 +52,23 @@ h1, .h1, h2, .h2, h3, .h3 {
     font-size: 30px;
     color: #ffffff;
     text-align: center;
-    padding: 50px;
+    padding-inline: 50px;
+    display: inline-block;
+}
+
+.enlaces .cli{
+    display: inline-block;
+    flex-grow: 1;
+    text-align: right;
+}
+
+.enlaces .funcionalidades{
+    display: inline-block;
+    align-items: center;
+}
+
+.enlaces{
+    alignment: center;
 }
 
 
@@ -64,6 +85,7 @@ h1, .h1, h2, .h2, h3, .h3 {
     background-attachment: scroll;
     background-size: cover;
     background-clip: border-box;
+    background-position-x: center;
     font-size: 12px;
     font-family: 'Calibre', serif;
     padding-top: 28%;

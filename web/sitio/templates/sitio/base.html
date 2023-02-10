@@ -16,10 +16,16 @@
 <div class="page-header">
     <h2>Rapture</h2>
     <div  class="enlaces">
-        <a href="{% url 'information' %}" class="top-menu">Inicio</a>
-        <a href="{% url 'torneos' %}" class="top-menu">Torneos</a>
-        <a href="{% url 'tienda' %}" class="top-menu">Tienda</a>
-        <a href="{% url 'cliente_new' %}" class="top-menu">Regístrate</a>
+        <div class="funcionalidades">
+            <a href="{% url 'information' %}" class="top-menu">Inicio</a>
+            <a href="{% url 'torneos' %}" class="top-menu">Torneos</a>
+            <a href="{% url 'tienda' %}" class="top-menu">Tienda</a>
+
+        </div>
+        <div class="cli">
+            <a href="{% url 'cliente_new' %}" class="top-menu">Unirse</a>
+            <a href="{% url 'login' %}" class="top-menu" id="cliente">Iniciar Sesión</a>
+        </div>
     </div>
 </div>
 </header>

@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
 
 from .forms import *
 from .models import *
@@ -22,6 +23,22 @@ def cliente_new(request):
     else:
         form = ClienteForm()
     return render(request, 'sitio/cliente_new.html',{'form': form})
+
+def login(request):
+    if request.method == 'POST':
+        username = request.POST['nombre']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            # El usuario no se autenticó correctamente
+            return render(request, 'sitio/login.html', {'error': 'Nombre de usuario o contraseña incorrectos'})
+    else:
+        # Mostrar formulario de inicio de sesión
+        return render(request, 'sitio/login.html')
+
 
 def torneos(request):
     torneos = Torneo.objects.filter(fecha_tor_emp__lte=timezone.now()).order_by('fecha_tor_emp')
