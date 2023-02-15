@@ -1,10 +1,11 @@
 from django import forms
 from .models import *
 
-class ClienteForm(forms.ModelForm):
-    class Meta:
-        model = Cliente
-        fields = ['dni','nombre','fecha_alta','direccion','mobile']
+
+
+class LoginForm(forms.Form):
+    nombre = forms.CharField(label='Nombre de usuario', max_length=30)
+    contrasenha = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
 
 
 class NoticiaForm(forms.ModelForm):
