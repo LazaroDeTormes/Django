@@ -3,10 +3,6 @@ from .models import *
 
 
 
-class LoginForm(forms.Form):
-    nombre = forms.CharField(label='Nombre de usuario', max_length=30)
-    contrasenha = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
-
 
 class NoticiaForm(forms.ModelForm):
     class Meta:

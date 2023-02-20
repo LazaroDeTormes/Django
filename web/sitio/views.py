@@ -33,8 +33,8 @@ def tienda(request):
 
 class Login(LoginView):
     template_name = 'sitio/login.html'
-    field = '__all__'
-    redirect_authenticated_user = True
+    fields = '__all__'
+    redirect_authenticated_user = False
 
     def get_success_url(self):
         return reverse_lazy('torneos')
@@ -42,16 +42,14 @@ class Login(LoginView):
 class Registro(FormView):
     template_name = 'sitio/registro.html'
     form_class = UserCreationForm
-    redirect_authenticated_user = True
-    success_url = reverse_lazy('torneos')
+    redirect_authenticated_user = False
+    success_url = reverse_lazy('registro')
 
     def form_valid(self, form):
         usuario = form.save()
         if usuario is not None:
             login(self.request, usuario)
-            return super(Registro, self.form_valid(form))
+        return super(Registro, self).form_valid(form)
 
-    def get(self, *args, **kwargs):
-        if self.request.user.is_authenticated:
-            return redirect('torneos')
-        return super(Registro, self).get(*args, **kwargs)
+    def get_success_url(self):
+        return reverse_lazy('torneos')
