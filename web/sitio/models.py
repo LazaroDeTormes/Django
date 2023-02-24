@@ -21,7 +21,7 @@ class Torneo(models.Model):
     fecha_tor_fin = models.DateTimeField("Fecha de finiquito", blank=False, null=False, default=datetime.datetime.now())
     concursantes = models.ManyToManyField(User,
                                        related_name='usuarios',
-                                    null=True,
+                                        null=True,
                                        blank=True)
 
 class Articulo(models.Model):

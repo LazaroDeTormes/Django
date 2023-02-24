@@ -19,6 +19,20 @@ def information(request):
 
 
 
+def joinTournament(request):
+    template_name = 'sitio/torneos.html'
+    fields = 'titulo'
+    tournamentId = Torneo.titulo
+    user = request.user
+    print(user)
+    tournament = Torneo.objects.get(titulo=tournamentId)
+    tournament.concursantes.add(user)
+    return redirect('torneos')
+
+def clientes(request):
+    clientes = User.objects
+    return render(request, 'sitio/clientes_list.html', {'clientes':clientes})
+
 
 
 def torneos(request):
