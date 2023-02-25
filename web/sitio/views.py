@@ -20,18 +20,29 @@ def information(request):
 
 
 def joinTournament(request):
-    template_name = 'sitio/torneos.html'
-    fields = 'titulo'
-    tournamentId = Torneo.titulo
-    user = request.user
-    print(user)
-    tournament = Torneo.objects.get(titulo=tournamentId)
-    tournament.concursantes.add(user)
-    return redirect('torneos')
+    if request.method == "POST":
 
-def clientes(request):
-    clientes = User.objects
-    return render(request, 'sitio/clientes_list.html', {'clientes':clientes})
+        titulo = request.POST.get('titulo')
+        tournamentId = titulo
+        user = request.user
+        print(titulo)
+        tournament = Torneo.objects.get(titulo=tournamentId)
+        tournament.concursantes.add(user)
+        return redirect('torneos')
+    else:
+        return render(request, 'toeneos.html')
+
+
+
+def sobreNos(request):
+    return render(request, 'sitio/sobrenosotros.html')
+
+def clientes(request, titulo):
+    torneo = Torneo.objects.get(titulo=titulo)
+
+    concursantes = torneo.concursantes.all()
+
+    return render(request, 'sitio/concursantes.html', {'torneo': torneo, 'concursantes': concursantes})
 
 
 
