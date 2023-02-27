@@ -10,6 +10,14 @@
     z-index: 50;
 }
 
+.nuevoCli{
+    color: white;
+}
+
+input{
+    color: black;
+}
+
 p {
     margin: 0;
     font-family: 'Calibre';
