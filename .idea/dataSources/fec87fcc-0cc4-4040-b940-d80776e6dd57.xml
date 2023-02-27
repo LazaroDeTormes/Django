@@ -1324,9 +1324,9 @@
     <table id="490" parent="166" name="django_migrations"/>
     <table id="491" parent="166" name="django_session"/>
     <table id="492" parent="166" name="sitio_articulo"/>
-    <table id="493" parent="166" name="sitio_cliente"/>
-    <table id="494" parent="166" name="sitio_noticia"/>
-    <table id="495" parent="166" name="sitio_torneo"/>
+    <table id="493" parent="166" name="sitio_noticia"/>
+    <table id="494" parent="166" name="sitio_torneo"/>
+    <table id="495" parent="166" name="sitio_torneo_concursantes"/>
     <table id="496" parent="166" name="sqlite_master">
       <System>1</System>
     </table>
@@ -1779,133 +1779,145 @@ model</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_sitio_articulo_1</UnderlyingIndexName>
     </key>
-    <column id="589" parent="493" name="nombre">
-      <DasType>varchar(150)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="590" parent="493" name="fecha_alta">
-      <DasType>datetime|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="591" parent="493" name="direccion">
-      <DasType>varchar(150)|0s</DasType>
-      <Position>3</Position>
-    </column>
-    <column id="592" parent="493" name="mobile">
-      <DasType>varchar(150)|0s</DasType>
-      <Position>4</Position>
-    </column>
-    <column id="593" parent="493" name="dni">
-      <DasType>varchar(8)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-    </column>
-    <index id="594" parent="493" name="sqlite_autoindex_sitio_cliente_1">
-      <ColNames>dni</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Unique>1</Unique>
-    </index>
-    <key id="595" parent="493">
-      <ColNames>dni</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_sitio_cliente_1</UnderlyingIndexName>
-    </key>
-    <column id="596" parent="494" name="titular">
+    <column id="589" parent="493" name="titular">
       <DasType>varchar(15)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="597" parent="494" name="previsualizacion">
+    <column id="590" parent="493" name="previsualizacion">
       <DasType>varchar(150)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="598" parent="494" name="cuerpo">
+    <column id="591" parent="493" name="cuerpo">
       <DasType>varchar(500)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="599" parent="494" name="fecha">
+    <column id="592" parent="493" name="fecha">
       <DasType>datetime|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="600" parent="494" name="imagen">
+    <column id="593" parent="493" name="imagen">
       <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <index id="601" parent="494" name="sqlite_autoindex_sitio_noticia_1">
+    <index id="594" parent="493" name="sqlite_autoindex_sitio_noticia_1">
       <ColNames>titular</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="602" parent="494">
+    <key id="595" parent="493">
       <ColNames>titular</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_sitio_noticia_1</UnderlyingIndexName>
     </key>
-    <column id="603" parent="495" name="titulo">
+    <column id="596" parent="494" name="titulo">
       <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="604" parent="495" name="descripcion">
+    <column id="597" parent="494" name="descripcion">
       <DasType>varchar(200)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="605" parent="495" name="requisitos">
+    <column id="598" parent="494" name="requisitos">
       <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="606" parent="495" name="fecha_tor_emp">
+    <column id="599" parent="494" name="fecha_tor_emp">
       <DasType>datetime|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="607" parent="495" name="fecha_tor_fin">
+    <column id="600" parent="494" name="fecha_tor_fin">
       <DasType>datetime|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <index id="608" parent="495" name="sqlite_autoindex_sitio_torneo_1">
+    <index id="601" parent="494" name="sqlite_autoindex_sitio_torneo_1">
       <ColNames>titulo</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="609" parent="495">
+    <key id="602" parent="494">
       <ColNames>titulo</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_sitio_torneo_1</UnderlyingIndexName>
     </key>
-    <column id="610" parent="496" name="type">
+    <column id="603" parent="495" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>integer|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="604" parent="495" name="torneo_id">
+      <DasType>varchar(20)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="605" parent="495" name="user_id">
+      <DasType>integer|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <foreign-key id="606" parent="495">
+      <ColNames>torneo_id</ColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefColNames>titulo</RefColNames>
+      <RefTableName>sitio_torneo</RefTableName>
+    </foreign-key>
+    <foreign-key id="607" parent="495">
+      <ColNames>user_id</ColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefColNames>id</RefColNames>
+      <RefTableName>auth_user</RefTableName>
+    </foreign-key>
+    <index id="608" parent="495" name="sitio_torneo_concursantes_torneo_id_user_id_e26ebad1_uniq">
+      <ColNames>torneo_id
+user_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="609" parent="495" name="sitio_torneo_concursantes_torneo_id_0d10d087">
+      <ColNames>torneo_id</ColNames>
+    </index>
+    <index id="610" parent="495" name="sitio_torneo_concursantes_user_id_09e58800">
+      <ColNames>user_id</ColNames>
+    </index>
+    <key id="611" parent="495">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="612" parent="496" name="type">
       <DasType>TEXT|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="611" parent="496" name="name">
+    <column id="613" parent="496" name="name">
       <DasType>TEXT|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="612" parent="496" name="tbl_name">
+    <column id="614" parent="496" name="tbl_name">
       <DasType>TEXT|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="613" parent="496" name="rootpage">
+    <column id="615" parent="496" name="rootpage">
       <DasType>INT|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="614" parent="496" name="sql">
+    <column id="616" parent="496" name="sql">
       <DasType>TEXT|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="615" parent="497" name="name">
+    <column id="617" parent="497" name="name">
       <Position>1</Position>
     </column>
-    <column id="616" parent="497" name="seq">
+    <column id="618" parent="497" name="seq">
       <Position>2</Position>
     </column>
   </database-model>

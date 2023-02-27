@@ -1,0 +1,14 @@
+{% extends 'sitio/base.html' %}
+{% block content %}
+
+    <div class = "concur">
+      <h1>Concursantes del torneo "{{ torneo.titulo }}"</h1>
+      <ul>
+        {% for concursante in torneo.concursantes.all %}
+          <li>{{ concursante.username }}</li>
+        {% empty %}
+          <li>No hay concursantes registrados en este torneo.</li>
+        {% endfor %}
+      </ul>
+    </div>
+{% endblock %}

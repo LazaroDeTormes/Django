@@ -7,11 +7,13 @@
 <div class="nuevoCli">
     <h3> INICIAR SESIÓN </h3>
     <br/>
-    <form method="POST" id="formul"> {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit" class="save btn btn-default">Iniciar Sesión</button>
+    <form method="POST" class="mt-4" >
+        {% csrf_token %}
+        <table class="table align-top w-50">
+            {{ form.as_table }}
+        </table>
+        <input class="btn btn-lg btn-dark mt-2" type="submit" value="Iniciar Sesión">
     </form>
-
 
 </div>
 {% endblock %}

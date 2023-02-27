@@ -3,18 +3,29 @@
 {% for torneo in torneos %}
 
 <div class="tour">
-  <h2>{{ torneo.titulo }}</h2>
-  <hr/>
-  <p>Descripción:</p>
-  <p>{{ torneo.descripcion }}</p>
-  <p>- - - - - - - - - - - - - - - - - - - - - - - - - - </p>
-  <p>Requisitos:</p>
-  <p>{{ torneo.requisitos }}</p>
-  <p>- - - - - - - - - - - - - - - - - - - - - - - - - - </p>
-  <p>Inicio y fin</p>
-  <p>{{ torneo.fecha_tor_emp }}</p>
-  <p>{{ torneo.fecha_tor_fin }}</p>
-  <button type="submit" class="save btn btn-default">¡Inscríbete!</button>
+  <form method="POST" action="{% url 'ins' %}">
+
+    {% csrf_token %}
+      <h2>{{ torneo.titulo }}</h2>
+      <input type="hidden" name="titulo" value="{{ torneo.titulo }}">
+      <hr/>
+      <p>Descripción:</p>
+      <p>{{ torneo.descripcion }}</p>
+      <p>- - - - - - - - - - - - - - - - - - - - - - - - - - </p>
+      <p>Requisitos:</p>
+      <p>{{ torneo.requisitos }}</p>
+      <p>- - - - - - - - - - - - - - - - - - - - - - - - - - </p>
+      <p>Inicio y fin</p>
+      <p>{{ torneo.fecha_tor_emp }}</p>
+      <p>{{ torneo.fecha_tor_fin }}</p>
+
+      <input class="btn btn-lg btn-dark mt-2" type="submit" value="Inscríbete">
+  </form>
+  <form method="POST" action="{% url 'clientes_list' torneo.titulo %}">
+    {% csrf_token %}
+      <input type="hidden" name="titulo" value="{{ torneo.titulo }}">
+      <input class="btn btn-lg btn-dark mt-2" type="submit" value="Concursantes">
+  </form>
 </div>
 {% endfor %}
 {% endblock %}

@@ -1,14 +1,9 @@
 import datetime
 
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
-class Cliente(models.Model):
-    dni = models.CharField(max_length=8, primary_key= True)
-    nombre = models.CharField(max_length=150, blank= False, null = False)
-    fecha_alta = models.DateTimeField("Fecha de alta", blank= False, null = False)
-    direccion = models.CharField(max_length=150, blank= False, null = True)
-    mobile = models.CharField(max_length=150, blank = False, null = True)
+
 
 
 class Noticia(models.Model):
@@ -24,6 +19,10 @@ class Torneo(models.Model):
     requisitos = models.CharField(max_length=100, blank= False, null = False)
     fecha_tor_emp = models.DateTimeField("Fecha de inicio", blank= False, null = False, default=datetime.datetime.now())
     fecha_tor_fin = models.DateTimeField("Fecha de finiquito", blank=False, null=False, default=datetime.datetime.now())
+    concursantes = models.ManyToManyField(User,
+                                       related_name='usuarios',
+                                        null=True,
+                                       blank=True)
 
 class Articulo(models.Model):
     img = models.ImageField(upload_to="static/media")
